@@ -3,7 +3,7 @@
 // Used by `make local` — does NOT affect Debug or Release configurations.
 
 // Ad-hoc signing (works without a developer account)
-CODE_SIGN_IDENTITY = -
+CODE_SIGN_IDENTITY = VoiceInk Local Signing
 CODE_SIGN_STYLE = Manual
 DEVELOPMENT_TEAM =
 PROVISIONING_PROFILE_SPECIFIER =
@@ -13,3 +13,6 @@ PROVISIONING_PROFILE_SPECIFIER =
 
 // Add LOCAL_BUILD compilation flag so Swift code can use #if LOCAL_BUILD
 SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) LOCAL_BUILD
+
+// Use the stable self-signed identity so TCC permissions persist across rebuilds
+OTHER_CODE_SIGN_FLAGS = --keychain $(HOME)/Library/Keychains/vi-signing.keychain-db
