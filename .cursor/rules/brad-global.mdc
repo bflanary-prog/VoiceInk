@@ -73,6 +73,17 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
+## 5. Git — "commit" is not push; never scoop other sessions
+
+Applies on air, mini, and remote/Cursor sessions. Full write-up:
+`~/.claude/projects/_shared/memory/feedback_commit_vs_push.md`.
+
+- **"commit"** → stage **this session's** paths only → commit → **STOP. Do not push.**
+- Push only on **"wrap up"** / **"git sync"** / explicit **"push"**.
+- If `git status` shows files you did not touch, **leave them** (`~/Projects/*`
+  and `~/.claude`). Never `git add -A` / `git commit -a` over mixed dirty trees.
+- Always: `git add <paths…>` then `git commit -m "…" -- <paths…>`.
+
 ---
 
 **Tradeoff:** These rules bias toward caution over speed. For trivial tasks, use judgment.
